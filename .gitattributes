@@ -1,0 +1,17 @@
+# Ensure consistent line endings
+* text=auto
+
+# Explicitly define line endings for common file types
+*.env text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.sh text eol=lf
+*.sql text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+
+# Handle diff for specific file types
+*.lock -diff
+
+# Linguist overrides
+*.sql linguist-language=PLSQL
