@@ -1,0 +1,15 @@
+{
+  "name": "root",
+  "type": "module",
+  "packageManager": "pnpm@10.29.3",
+  "scripts": {
+    "build": "node scripts/build-grammar.js",
+    "link": "node scripts/link-extension.js",
+    "package": "cd extension && vsce package -o ../plsql-syntax.vsix"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.4.13",
+    "@vscode/vsce": "^3.9.1",
+    "plist": "^3.1.0"
+  }
+}

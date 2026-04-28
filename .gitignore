@@ -14,9 +14,7 @@ wget-log
 **/~local/
 
 # Build
-**/bin/
-**/build/
-**/dist/
+**/*.vsix
 
 # macOS system files
 _MACOSX/

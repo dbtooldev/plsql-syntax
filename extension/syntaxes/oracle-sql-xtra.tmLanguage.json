@@ -1,0 +1,28 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Oracle PL/SQL Extra Patterns",
+  "scopeName": "source.oracle-sql.xtra",
+  "injectionSelector": "L:source.oracle-sql -comment -string",
+  "patterns": [
+    { "include": "#sql-macro" },
+    { "include": "#nologging" },
+    { "include": "#generated-virtual-column" }
+  ],
+  "repository": {
+    "sql-macro": {
+      "comment": "SQL_MACRO keyword for table/scalar SQL macros",
+      "match": "(?i)\\b(sql_macro(\\s*\\(\\s*(table|scalar)\\s*\\))?)\\b",
+      "name": "keyword.other.oracle-sql"
+    },
+    "nologging": {
+      "comment": "NOLOGGING hint for DDL operations",
+      "match": "(?i)\\bNOLOGGING\\b",
+      "name": "keyword.other.oracle-sql"
+    },
+    "generated-virtual-column": {
+      "comment": "GENERATED ALWAYS AS (...) VIRTUAL column syntax",
+      "match": "(?i)\\b(GENERATED\\s+ALWAYS\\s+AS)\\b|\\bVIRTUAL\\b",
+      "name": "keyword.other.oracle-sql"
+    }
+  }
+}

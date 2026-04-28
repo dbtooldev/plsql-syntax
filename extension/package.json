@@ -1,0 +1,113 @@
+{
+  "name": "plsql-syntax",
+  "displayName": "PL/SQL Syntax Highlight",
+  "description": "Comprehensive PL/SQL and SQL syntax highlighting for VS Code, Cursor, and other VS Code-compatible editors",
+  "version": "1.0.0",
+  "publisher": "DBTool",
+  "license": "MIT",
+  "icon": "assets/icon.png",
+  "galleryBanner": {
+    "color": "#232934",
+    "theme": "dark"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dbtooldev/plsql-syntax"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "keywords": [
+    "plsql",
+    "pl/sql",
+    "pl sql",
+    "oracle",
+    "oracle plsql",
+    "oracle pl/sql",
+    "oracle sql",
+    "oracle database",
+    "oracle apex",
+    "sql",
+    "sqlplus",
+    "sqlcl",
+    "stored procedure",
+    "package",
+    "procedure",
+    "function",
+    "trigger",
+    "syntax highlighting",
+    "vscode",
+    "cursor"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "oracle-sql",
+        "aliases": [
+          "PL/SQL",
+          "PLSQL",
+          "Oracle PL/SQL",
+          "Oracle",
+          "Oracle SQL",
+          "PL SQL"
+        ],
+        "extensions": [
+          ".sql",
+          ".ddl",
+          ".dml",
+          ".pkh",
+          ".pks",
+          ".pkb",
+          ".pck",
+          ".pls",
+          ".plb",
+          ".bdy",
+          ".fnc",
+          ".idx",
+          ".mv",
+          ".prc",
+          ".prg",
+          ".sch",
+          ".seq",
+          ".spc",
+          ".syn",
+          ".tab",
+          ".tbl",
+          ".tbp",
+          ".tps",
+          ".trg",
+          ".typ",
+          ".vw"
+        ],
+        "configuration": "./syntaxes/language-configuration.json",
+        "icon": {
+          "light": "assets/db-light.svg",
+          "dark": "assets/db-dark.svg"
+        }
+      }
+    ],
+    "grammars": [
+      {
+        "language": "oracle-sql",
+        "scopeName": "source.oracle-sql",
+        "path": "./syntaxes/oracle-sql-base.tmLanguage.json",
+        "embeddedLanguages": {
+          "meta.embedded.block.json": "json"
+        }
+      },
+      {
+        "scopeName": "source.oracle-sql.xtra",
+        "path": "./syntaxes/oracle-sql-xtra.tmLanguage.json",
+        "injectTo": [
+          "source.oracle-sql"
+        ]
+      }
+    ]
+  },
+  "scripts": {
+    "package": "vsce package -o ./plsql-syntax-${npm_package_version}.vsix"
+  }
+}
